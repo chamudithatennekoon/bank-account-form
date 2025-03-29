@@ -24,7 +24,60 @@ import {
 const BankForm = () => {
   return (
     <>
-      <Container maxWidth="sm"></Container>
+      <Container maxWidth="sm">
+        <Typography variant="h5" align="center" gutterBottom>
+          Bank Account Opening Form
+        </Typography>
+
+        <form>
+          <TextField fullWidth label="Full Name" margin="normal" />
+          <TextField fullWidth label="Email" type="email" margin="normal" />
+          <TextField fullWidth label="Phone Number" margin="normal" />
+          <TextField
+            fullWidth
+            label="Date of Birth"
+            type="date"
+            margin="normal"
+            InputLabelProps={{ shrink: true }}
+          />
+          <FormControl fullWidth margin="normal">
+            <InputLabel>Account Type</InputLabel>
+            <Select defaultValue="">
+              <MenuItem value="Savings">Savings</MenuItem>
+              <MenuItem value="Checking">Checking</MenuItem>
+            </Select>
+          </FormControl>
+
+          <TextField
+            fullWidth
+            label="Initial Deposit"
+            type="number"
+            margin="normal"
+          />
+
+          <FormControl fullWidth margin="normal">
+            <InputLabel>Currency</InputLabel>
+            <Select defaultValue="">
+              <MenuItem value="USD">USD</MenuItem>
+              <MenuItem value="EUR">EUR</MenuItem>
+              <MenuItem value="LKR">LKR</MenuItem>
+            </Select>
+          </FormControl>
+
+          <TextField fullWidth label="Street Address" margin="normal" />
+          <TextField fullWidth label="City" margin="normal" />
+          <TextField fullWidth label="Zip Code" margin="normal" />
+
+          <FormControlLabel
+            control={<Checkbox />}
+            label="I agree to the Terms & Conditions"
+          />
+
+          <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
+            Submit
+          </Button>
+        </form>
+      </Container>
     </>
   );
 };
