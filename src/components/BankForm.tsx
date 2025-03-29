@@ -51,6 +51,7 @@ type FormData = z.infer<typeof formSchema>;
 
 const BankForm = () => {
   const [loading, setLoading] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
 
   const {
     register,
@@ -64,6 +65,12 @@ const BankForm = () => {
     setLoading(true);
     console.log("Form Submitted", data);
     setLoading(false);
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+    reset();
   };
 
   return (
@@ -199,6 +206,24 @@ const BankForm = () => {
           </Button>
         </form>
       </Paper>
+
+      <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <DialogTitle>Success</DialogTitle>
+        <DialogContent>
+          <Typography>
+            Your bank account opening form has been successfully submitted!
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleCloseDialog}
+            variant="contained"
+            color="primary"
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   );
 };
