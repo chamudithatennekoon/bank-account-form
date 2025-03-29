@@ -57,6 +57,7 @@ const BankForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
