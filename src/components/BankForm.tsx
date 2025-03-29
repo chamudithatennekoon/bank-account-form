@@ -30,6 +30,10 @@ const BankForm = () => {
         </Typography>
 
         <form>
+          <Typography variant="h6" gutterBottom sx={{ marginTop: 2 }}>
+            Personal Information
+          </Typography>
+
           <TextField fullWidth label="Full Name" margin="normal" />
           <TextField fullWidth label="Email" type="email" margin="normal" />
           <TextField fullWidth label="Phone Number" margin="normal" />
@@ -40,6 +44,10 @@ const BankForm = () => {
             margin="normal"
             InputLabelProps={{ shrink: true }}
           />
+
+          <Typography variant="h6" gutterBottom sx={{ marginTop: 3 }}>
+            Account Details
+          </Typography>
           <FormControl fullWidth margin="normal">
             <InputLabel>Account Type</InputLabel>
             <Select defaultValue="">
@@ -63,6 +71,10 @@ const BankForm = () => {
               <MenuItem value="LKR">LKR</MenuItem>
             </Select>
           </FormControl>
+
+          <Typography variant="h6" gutterBottom sx={{ marginTop: 3 }}>
+            Address
+          </Typography>
 
           <TextField fullWidth label="Street Address" margin="normal" />
           <TextField fullWidth label="City" margin="normal" />
